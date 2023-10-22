@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Alert,
+    TouchableHighlight,
+    TouchableOpacity,
+    Dimensions,
+    ScrollView, Button
+} from 'react-native';
+
+import React, {useEffect, useState} from "react";
+import {TaskList} from "./components/TaskList/TaskList";
+import {ColorChanger} from "./components/LR6/ColorChanger";
+import AuthForm from "./components/LR7/AuthForm/AuthForm";
+import {Center, Heading, Input, NativeBaseProvider, VStack} from "native-base";
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+        <NativeBaseProvider>
+            <AuthForm/>
+        </NativeBaseProvider>
+
+
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
